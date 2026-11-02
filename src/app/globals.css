@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Farben und Schrift an einer Stelle. Hell und dunkel folgen der Einstellung des Geräts. */
+:root {
+  --bg: #ffffff;
+  --panel: #f6f6f5;
+  --ink: #111111;
+  --mute: #5f5f5f;
+  --line: #e5e5e3;
+  --accent: #2b59ff;
+  --c-blau: #2b59ff;
+  --c-gruen: #12936b;
+  --c-orange: #e8660c;
+  --c-rot: #d92d2d;
+  --c-violett: #7a4fd6;
+  --c-grau: #6b6b6b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d0e;
+    --panel: #18181a;
+    --ink: #f1f1f1;
+    --mute: #a0a0a0;
+    --line: #2a2a2d;
+    --accent: #6f8cff;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+input,
+textarea,
+select {
+  font-size: 16px; /* sonst zoomt das iPhone beim Tippen */
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
